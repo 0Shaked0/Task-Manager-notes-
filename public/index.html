@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="webTitle">
+        <h2>Personal Task Manager</h2>
+    </div>
+
+     <button class="CreateNote_btn" type="button"><strong>Create New</strong></button>
+
+    <div class="noteCreator_box">
+        <button class="closeNote_btn" type="click">&times;</button>
+        <input class="noteTitle" placeholder="Title">
+        <textarea class="moreInfo" placeholder="Enter additional text"></textarea>
+        <input class="imageBox" type="file" accept="image/*">
+        <button class="AddNote_btn">Add Note</button>
+    </div>
+
+    <div class="note-container-wrapper">
+        <ul class="note-container"></ul>
+    </div>
+    
+    <script src="main.js"></script>
+
+</body>
+</html>

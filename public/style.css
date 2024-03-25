@@ -1,0 +1,287 @@
+/* The background of the website */
+body {
+    margin: 0;
+    background: #009578;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The Title of the website */
+.webTitle {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 50px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 5px solid black;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* This is the container that add notes */
+.noteCreator_box {
+    display: none;
+    position: fixed;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    max-height: 80%;
+    overflow-y: auto;
+    background: rgb(213, 192, 74);
+    border-radius: 8px;
+    border: 5px solid #ecf0f3;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* This is the containers that contain all the notes */
+.note-container-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+    align-items: flex-start;
+    padding-top: 80px;
+}
+
+.note-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 10px;
+    margin-top: 60px;
+}
+
+/* This is the individual container for each notes */
+.note {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 200px;
+    overflow-y: hidden;
+    flex: 0 0 auto;
+}
+
+.note:last-child {
+    margin-right: 0;
+}
+
+/* The container that lets you enter the title for the note */
+.noteTitle {
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+/* The container that lets you enter more information inside the note */
+.moreInfo {
+    width: 100%;
+    margin-top: px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 100px;
+    resize: none;
+}
+
+/* The container that lets you add an image to the note */
+.imageBox{
+    margin-top: 40px;
+}
+
+/* From here are the containers that hold the information inside the notes */
+.note .details{
+    max-height: 165px;
+    overflow-y: auto;
+    overflow-x: auto;
+    flex: 1;
+}
+
+.note .details p {
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgb(115, 112, 112);
+}
+
+.note .details span {
+    font-size: 15px;
+    color: #777;
+}
+
+
+.note .bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.note .bottom-content .settings {
+    display: flex;
+}
+
+.note .bottom-content .settings i {
+    font-size: 20px;
+    color: #777;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.note .bottom-content .settings .menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 5px);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: none;
+}
+
+.note .bottom-content .settings .menu.show {
+    display: block;
+}
+
+.note .bottom-content .settings .menu li {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.note .bottom-content .settings .menu li:hover {
+    background-color: #f2f2f2;
+}
+
+/* The buttons of the container from here */
+/* Button to add notes */
+.CreateNote_btn {
+    position: absolute;
+    padding: 10px;
+    font-size: 20px;
+    width: auto;
+    height: 100px;
+    top: 30px;
+    right: 150px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    background: rgb(105, 208, 237);
+    transition: transform 0.5s ease;
+}
+
+.CreateNote_btn p {
+    margin-left: 10px;
+}
+
+/* The image on the button */
+.CreateNote_btn::before {
+    content: '';
+    background-image: url('/public/plus.png');
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Click animation on the button */
+.CreateNote_btn:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease;
+}
+
+/* Button to submit the notes */
+.AddNote_btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 50px;
+    background-color: #4CAF50;
+    transition: background-color 0.3s ease;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Hover animation on the button */
+.AddNote_btn:hover {
+    background-color: #408040;
+}
+
+/* X button to close the window */
+.closeNote_btn {
+    position: absolute;
+    float: right;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: solid black;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+/* Hover animation on the button */
+.closeNote_btn:hover {
+    transform: scale(0.9);
+    transition: transform 0.1s ease;
+}
+
+/* The edit and delete buttons inside the notes */
+.note .bottom-content .action-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.note .bottom-content .action-buttons .edit-button, 
+.note .bottom-content .action-buttons .delete-button {
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 5px 10px;
+}
+
+.note .bottom-content .action-buttons .edit-button {
+    background-color: #4CAF50;
+    margin-right: 5px;
+}
+
+.note .bottom-content .action-buttons .delete-button {
+    background-color: #f44336;
+}
